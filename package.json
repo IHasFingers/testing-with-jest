@@ -14,5 +14,8 @@
     "url": "(https://github.com/IHasFingers/testing-with-jest.git)"
   },
   "author": "Philip Aronsson",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "^1.13.6"
+  }
 }
