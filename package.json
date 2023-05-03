@@ -17,5 +17,9 @@
   "license": "MIT",
   "dependencies": {
     "underscore": "^1.13.6"
+  },
+  "devDependencies": {
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
   }
 }
