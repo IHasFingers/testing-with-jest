@@ -21,5 +21,5 @@ test('peek on stack with two or more elements returns the top element', () => {
 test('pop on empty stack throws an error', () => {
     expect(() => {
         stack.pop();
-    }).toThrowError("Custom error message");
+    }).toThrowError("Stack is empty");
 });

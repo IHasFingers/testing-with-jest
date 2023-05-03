@@ -35,19 +35,20 @@ describe('Clicking "Pusha till stacken"', () => {
 
 describe('Clicking "Pop från stacken"', () => {
 	it('should remove the top item from the stack', async () => {
-		// lägger till ett värde till stacken
+		// Add an item to the stack first
 		let push = await driver.findElement(By.id('push'));
 		await push.click();
 		let alert = await driver.switchTo().alert();
 		await alert.sendKeys("Bananer");
 		await alert.accept();
 
-		// klickar på "Pop från stacken"
+		// Click the "Pop från stacken" button
 		let pop = await driver.findElement(By.id('pop'));
 		await pop.click();
 
-		// Intentionally make the assertion fail by expecting the top item to be "Bananer" instead of "n/a"
+		// Verify that the top item is now "n/a"
 		let stack = await driver.findElement(By.id('top_of_stack')).getText();
-		expect(stack).toEqual("Bananer");
+		expect(stack).toEqual("n/a");
 	});
 });
+
