@@ -16,6 +16,8 @@
   "author": "Philip Aronsson",
   "license": "MIT",
   "dependencies": {
+    "geckodriver": "^3.2.0",
+    "selenium-webdriver": "^4.9.0",
     "underscore": "^1.13.6"
   },
   "devDependencies": {
