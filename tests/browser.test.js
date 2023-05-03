@@ -33,22 +33,18 @@ describe('Clicking "Pusha till stacken"', () => {
 	});
 });
 
-describe('Clicking "Pop från stacken"', () => {
-	it('should remove the top item from the stack', async () => {
-		// Add an item to the stack first
-		let push = await driver.findElement(By.id('push'));
-		await push.click();
-		let alert = await driver.switchTo().alert();
-		await alert.sendKeys("Bananer");
-		await alert.accept();
+test('Popping an item from the stack should remove it from the top of stack element', async () => {
+    // Pop an item from the stack
+    const popButton = await driver.findElement(By.id('pop'));
+    await popButton.click();
 
-		// Click the "Pop från stacken" button
-		let pop = await driver.findElement(By.id('pop'));
-		await pop.click();
+    const alert = await driver.switchTo().alert();
+    const alertText = await alert.getText();
+    await alert.accept();
 
-		// Verify that the top item is now "n/a"
-		let stack = await driver.findElement(By.id('top_of_stack')).getText();
-		expect(stack).toEqual("n/a");
-	});
+    // Verify that the top of stack element has been updated correctly
+    const topOfStack = await driver.findElement(By.id('top_of_stack')).getText();
+    expect(topOfStack).toEqual('Bananer');
 });
+
 

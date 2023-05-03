@@ -18,8 +18,10 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 
-test('pop on empty stack throws an error', () => {
-    expect(() => {
-        stack.pop();
-    }).toThrowError("Stack is empty");
+test('popping an element from a non-empty stack returns the top element', () => {
+    stack.push('hello');
+    stack.push('world');
+    const topElement = stack.pop();
+    expect(topElement).toBe('world');
 });
+
